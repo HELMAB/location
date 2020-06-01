@@ -9,5 +9,6 @@
             "email": "mabhelitc@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "minimum-stability": "dev"
 }
