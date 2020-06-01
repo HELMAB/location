@@ -1,0 +1,13 @@
+{
+    "name": "asorasoft/location",
+    "description": "Seed data for Cambodia location",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "HEL Mab",
+            "email": "mabhelitc@gmail.com"
+        }
+    ],
+    "require": {}
+}
