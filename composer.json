@@ -9,5 +9,10 @@
             "email": "mabhelitc@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Asorasoft\\Location\\": "src/"
+        }
+    }
 }
