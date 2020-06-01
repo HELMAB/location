@@ -14,5 +14,6 @@
         "psr-4": {
             "Asorasoft\\Location\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
