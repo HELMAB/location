@@ -5,7 +5,7 @@ Seed province, district, commune and village.
 # Installation
 Require the `HELMAB/location` package in your composer.json and update your dependencies:
 ```
-composer required HELMAB/location
+composer require asorasoft/location
 ```
 
 The service provider will automatically get registered. Or you may manually add the service provider in your `config/app.php` file:
