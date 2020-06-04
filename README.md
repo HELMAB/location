@@ -3,7 +3,7 @@ The Cambodia Region
 Seed province, district, commune and village.
 
 # Installation
-Require the `HELMAB/location` package in your composer.json and update your dependencies:
+Require the `asorasoft/location` package in your composer.json and update your dependencies:
 ```
 composer require asorasoft/location
 ```
