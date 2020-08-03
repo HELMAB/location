@@ -24,9 +24,18 @@ You should publish the migration and models files with:
 php artisan vendor:publish --provider="Asorasoft\Location\LocationServiceProvider"
 ```
 
-Then run migrate provices, districts, communes and villages table:
+Then run migrate provinces, districts, communes and villages table:
 ```
 php artisan migrate
+```
+
+```php
+/**
+ * The API URL
+ *
+ * @var string
+ */
+protected $api = 'http://localhost:8000/get-address';
 ```
 
 Finally, the command `php artisan asorasoft:location` is available, and you can start to start seeding data.

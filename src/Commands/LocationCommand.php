@@ -1,6 +1,6 @@
 <?php
 
-namespace Asorasoft\Location\Commands;
+namespace App\Console\Commands;
 
 use App\Models\Commune;
 use App\Models\District;
