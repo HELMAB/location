@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\DB;
 class LocationCommand extends Command
 {
     /**
+     * @var string
+     */
+    protected $api = 'http://localhost:8000/get-address';
+
+    /**
      * The name and signature of the console command.
      *
      * @var string
@@ -110,12 +115,12 @@ class LocationCommand extends Command
             DB::rollBack();
             dump($exception->getMessage());
         }
-        dump("Nice work!");
+        $this->info('Done!');
     }
 
     private function getClient($parent_code = null)
     {
-        $path = "https://geo-service.asoradev.com/get-address/$parent_code";
+        $path = "$this->api/$parent_code";
         $client = new Client();
         $request = $client->get($path);
         $data = (array)json_decode($request->getBody());

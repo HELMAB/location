@@ -24,6 +24,7 @@ class CreateVillagesTable extends Migration
             $table->string('type_km');
             $table->string('type_en');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
