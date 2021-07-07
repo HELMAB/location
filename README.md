@@ -37,7 +37,7 @@ Go to `app/Console/Commands/RegionCommand.php` file and update `$api` attribute 
 ## Usage
 
 ```shell
-php artisan asorasoft:region // Seeds region data
+php artisan asorasoft:region
 ```
 
 ## Testing
