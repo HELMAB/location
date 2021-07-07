@@ -34,19 +34,19 @@ php artisan migrate
 
 Go to `app/Console/Commands/RegionCommand.php` file and update `$api` attribute to secret api to get the Khmer region.
 
-### Usage
+## Usage
 
 ```shell
 php artisan asorasoft:region // Seeds region data
 ```
 
-### Testing
+## Testing
 
 ```bash
 composer test
 ```
 
-### Changelog
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
