@@ -1,9 +1,9 @@
 ![socialcard](art/socialcard.png)
 
-KHRegion for Laravel (Khmer Region for Laravel)
+KHRegion for Laravel
 -------------------
 
-Seed province, district, commune and village data.
+Importing the province, district, commune and village data into your Laravel Development.
 
 ## Installation
 
