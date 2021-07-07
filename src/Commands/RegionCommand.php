@@ -10,7 +10,7 @@ use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
-class LocationCommand extends Command
+class RegionCommand extends Command
 {
     /**
      * @var string
@@ -22,7 +22,7 @@ class LocationCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'asorasoft:location';
+    protected $signature = 'asorasoft:region';
 
     /**
      * The console command description.
@@ -63,7 +63,7 @@ class LocationCommand extends Command
                     'code' => $province->code,
                     'name_km' => $province->name_km,
                     'name_en' => $province->name_latin,
-                    'type_en' => $province->type,
+                    'type_en' => $this->getTypeEn($province->type),
                     'type_km' => $province->type,
                     'admin_level' => $province->admin_level,
                 ]);
@@ -75,7 +75,7 @@ class LocationCommand extends Command
                         'code' => $district->code,
                         'name_km' => $district->name_km,
                         'name_en' => $district->name_latin,
-                        'type_en' => $district->type,
+                        'type_en' => $this->getTypeEn($district->type),
                         'type_km' => $district->type,
                         'admin_level' => $district->admin_level,
                     ]);
@@ -87,7 +87,7 @@ class LocationCommand extends Command
                             'code' => $commune->code,
                             'name_km' => $commune->name_km,
                             'name_en' => $commune->name_latin,
-                            'type_en' => $commune->type,
+                            'type_en' => $this->getTypeEn($commune->type),
                             'type_km' => $commune->type,
                             'admin_level' => $commune->admin_level,
                         ]);
@@ -100,7 +100,7 @@ class LocationCommand extends Command
                                 'parent_code' => $commune->code,
                                 'name_km' => $village->name_km,
                                 'name_en' => $village->name_latin,
-                                'type_en' => $village->type,
+                                'type_en' => $this->getTypeEn($village->type),
                                 'type_km' => $village->type,
                                 'admin_level' => $village->admin_level,
                             ]);
@@ -125,5 +125,27 @@ class LocationCommand extends Command
         $request = $client->get($path);
         $data = (array)json_decode($request->getBody());
         return $data;
+    }
+
+    private function getTypeEn($type)
+    {
+        switch ($type) {
+            case 'រាជធានី':
+                return 'Capital';
+            case 'ខេត្ត':
+                return 'Province';
+            case 'ក្រុង':
+                return 'City';
+            case 'ភូមិ':
+                return 'Village';
+            case 'ស្រុក':
+                return 'District';
+            case 'ខណ្ឌ':
+                return 'Khan';
+            case 'សង្កាត់':
+                return 'Sangkat';
+            case 'ឃុំ':
+                return 'Commune';
+        }
     }
 }
